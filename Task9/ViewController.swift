@@ -8,12 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet private var choiceLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction private func exit (sender: UIStoryboardSegue) {
+        if let choiceView = sender.source as? ChoiceViewController {
+            choiceLabel.text = choiceView.prefecturesText
+        }
     }
-
-
 }
-
