@@ -8,27 +8,29 @@
 import UIKit
 
 class ChoiceViewController: UIViewController {
-    var prefecturesText = ""
-    enum Prefectures: String {
-        case tokyo = "東京都"
-        case kanagawa = "神奈川県"
-        case saitama =  "埼玉県"
-        case chiba = "千葉県"
+    private(set) var prefecturesText: String?
+
+    enum Prefectures {
+        static let tokyo = "東京都"
+        static let kanagawa = "神奈川県"
+        static let saitama =  "埼玉県"
+        static let chiba = "千葉県"
+
     }
 
     @IBAction private func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     @IBAction private func choiceTokyo(_ sender: Any) {
-        prefecturesText = Prefectures.tokyo.rawValue
+        prefecturesText = Prefectures.tokyo
     }
     @IBAction private func choiceKanagawa(_ sender: Any) {
-        prefecturesText = Prefectures.kanagawa.rawValue
+        prefecturesText = Prefectures.kanagawa
     }
     @IBAction private func choiceSaitama(_ sender: Any) {
-        prefecturesText = Prefectures.saitama.rawValue
+        prefecturesText = Prefectures.saitama
     }
     @IBAction private func choiceChiba(_ sender: Any) {
-        prefecturesText = Prefectures.chiba.rawValue
+        prefecturesText = Prefectures.chiba
     }
 }
